@@ -22,17 +22,17 @@ for i, file in enumerate(filelist):
     if i < filecount*ratio[0]:
         if tidx != 0:
             trainlist += '\n'
-        trainlist += str(file)
+        trainlist += str(file).split('.')[0]
         tidx += 1
     elif i>=filecount*ratio[0] and i < (filecount*ratio[0])+(filecount*ratio[1]):
         if sidx != 0:
             testlist += '\n'
-        testlist += str(file)
+        testlist += str(file).split('.')[0]
         sidx += 1
     elif i>=filecount*ratio[1] and i < (filecount*ratio[0])+(filecount*ratio[1])+(filecount*ratio[2]):
         if vidx != 0:
             vallist += '\n'
-        vallist += str(file)
+        vallist += str(file).split('.')[0]
         vidx += 1
 
 text_file = open("D:\\Libraries\\Dataset\\TomatoSSD\\train.txt", "w")
